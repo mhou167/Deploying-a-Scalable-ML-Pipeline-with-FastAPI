@@ -2,6 +2,7 @@ import pickle
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from ml.data import process_data
 # TODO: add necessary import
+from sklearn.linear_model import LinearRegression
 
 # Optional: implement hyperparameter tuning.
 def train_model(X_train, y_train):
@@ -20,8 +21,10 @@ def train_model(X_train, y_train):
         Trained machine learning model.
     """
     # TODO: implement the function
-    model.fit(X_train, y_train)
-    pass
+    #got this from scikitlearn documentation: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html#sklearn.linear_model.LinearRegression
+    reg = LinearRegression().fit(X_train, y_train)
+    return reg
+    #pass
 
 
 def compute_model_metrics(y, preds):
@@ -61,7 +64,9 @@ def inference(model, X):
         Predictions from the model.
     """
     # TODO: implement the function
-    pass
+    y_pred = model.predict(X)
+    return
+    #pass
 
 def save_model(model, path):
     """ Serializes model to a file.
