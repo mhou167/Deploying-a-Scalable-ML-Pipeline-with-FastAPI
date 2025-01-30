@@ -20,6 +20,7 @@ def train_model(X_train, y_train):
         Trained machine learning model.
     """
     # TODO: implement the function
+    model.fit(X_train, y_train)
     pass
 
 
