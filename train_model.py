@@ -20,7 +20,10 @@ data = pd.read_csv(data_path) # DONE your code here
 
 # TODO: split the provided data to have a train dataset and a test dataset
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
-train, test = train_test_split(X, y, test_size=0.2, random_state=0)#DONE
+X_train, X_test, y_train, y_test = train_test_split(
+    data, 
+    test_size = 0.2, 
+    random_state = 0)#DONE
 
 # DO NOT MODIFY
 cat_features = [
