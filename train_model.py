@@ -20,10 +20,7 @@ data = pd.read_csv(data_path) # DONE your code here
 
 # TODO: split the provided data to have a train dataset and a test dataset
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
-X_train, X_test, y_train, y_test = train_test_split(
-    data, 
-    test_size = 0.2, 
-    random_state = 0)#DONE
+train, test = train_test_split(data, test_size=0.2, random_state=0)#DONE
 
 # DO NOT MODIFY
 cat_features = [
@@ -72,7 +69,7 @@ model = load_model(
 ) 
 
 # TODO: use the inference function to run the model inferences on the test dataset.
-preds = inference(model, y_test) # your code here DONE
+preds = inference(model, test) # your code here DONE
 
 # Calculate and print the metrics
 p, r, fb = compute_model_metrics(y_test, preds)

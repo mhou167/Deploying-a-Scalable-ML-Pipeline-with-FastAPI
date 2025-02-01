@@ -22,8 +22,8 @@ def train_model(X_train, y_train):
     """
     # TODO: implement the function
     #modified code from scikitlearn documentation: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html#sklearn.linear_model.LinearRegression
-    reg_model = LinearRegression().fit(X_train, y_train)
-    return reg_model
+    reg = LinearRegression().fit(X_train, y_train)
+    return reg
     #pass
 
 
@@ -64,7 +64,7 @@ def inference(model, X):
         Predictions from the model.
     """
     # TODO: implement the function
-    y_pred = model.predict(X)
+    preds = model.predict(X)
     return
     #pass
 
@@ -79,13 +79,16 @@ def save_model(model, path):
         Path to save pickle file.
     """
     # TODO: implement the function
-    pickle.dump(reg, model_path)
+    with open ('model.pkl', 'wb') as file:
+        pickle.dump(model, file)
+    
     #pass
 
 def load_model(path):
     """ Loads pickle file from `path` and returns it."""
     # TODO: implement the function
-    loaded_model = load_pickle_file(model_path)
+    with open('model.pkl', 'rb') as file:
+        loaded_model = pickle.load(file)
     return loaded_model
     #pass
 
