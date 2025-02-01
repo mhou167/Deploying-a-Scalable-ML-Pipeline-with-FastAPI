@@ -2,7 +2,7 @@ import pickle
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from ml.data import process_data
 # TODO: add necessary import
-from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestClassifier
 
 # Optional: implement hyperparameter tuning.
 def train_model(X_train, y_train):
@@ -22,8 +22,13 @@ def train_model(X_train, y_train):
     """
     # TODO: implement the function
     #modified code from scikitlearn documentation: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html#sklearn.linear_model.LinearRegression
-    reg = LinearRegression().fit(X_train, y_train)
-    return reg
+    model = RandomForestClassifier(
+        n_estimators=100,
+        max_depth=10,
+        random_state=42
+    )
+    model.fit(X_train, y_train)
+    return model
     #pass
 
 
