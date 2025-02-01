@@ -21,9 +21,9 @@ def train_model(X_train, y_train):
         Trained machine learning model.
     """
     # TODO: implement the function
-    #got this from scikitlearn documentation: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html#sklearn.linear_model.LinearRegression
-    reg = LinearRegression().fit(X_train, y_train)
-    return reg
+    #modified code from scikitlearn documentation: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html#sklearn.linear_model.LinearRegression
+    reg_model = LinearRegression().fit(X_train, y_train)
+    return reg_model
     #pass
 
 
@@ -131,6 +131,14 @@ def performance_on_categorical_slice(
         # your code here
         # for input data, use data in column given as "column_name", with the slice_value 
         # use training = False
+        data= "pd.census.csv",
+        column_name= "salary",
+        slice_value= "str",
+        categorical_features= cat_features,
+        label= "salary",
+        encoder= encoder,
+        lb= lb,
+        model= model,
     )
     preds = None # your code here to get prediction on X_slice using the inference function
     precision, recall, fbeta = compute_model_metrics(y_slice, preds)
