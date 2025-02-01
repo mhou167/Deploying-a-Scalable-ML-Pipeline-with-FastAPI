@@ -84,7 +84,7 @@ def save_model(model, path):
         Path to save pickle file.
     """
     # TODO: implement the function
-    with open ('model.pkl', 'wb') as file:
+    with open ('model_path', 'wb') as file:
         pickle.dump(model, file)
     
     #pass
@@ -92,7 +92,7 @@ def save_model(model, path):
 def load_model(path):
     """ Loads pickle file from `path` and returns it."""
     # TODO: implement the function
-    with open('model.pkl', 'rb') as file:
+    with open('model_path', 'rb') as file:
         loaded_model = pickle.load(file)
     return loaded_model
     #pass
