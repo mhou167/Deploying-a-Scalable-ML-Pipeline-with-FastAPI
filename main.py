@@ -26,10 +26,10 @@ class Data(BaseModel):
     hours_per_week: int = Field(..., example=40, alias="hours-per-week")
     native_country: str = Field(..., example="United-States", alias="native-country")
 
-path = encoder_path # TODO: enter the path for the saved encoder DONE?
+path = os.path.join(project_path, "model", "encoder.pkl") # TODO: enter the path for the saved encoder DONE?
 encoder = load_model(path)
 
-path = model_path # TODO: enter the path for the saved model DONE?
+path = os.path.join(project_path, "model", "model.pkl") # TODO: enter the path for the saved model DONE?
 model = load_model(path)
 
 # TODO: create a RESTful API using FastAPI
@@ -75,6 +75,6 @@ async def post_inference(data: Data):
         training=False,
         encoder=encoder,      
     )
-    
+
     _inference = inference(model, data_processed) # your code here to predict the result using data_processed
     return {"result": apply_label(_inference)}
