@@ -26,20 +26,21 @@ class Data(BaseModel):
     hours_per_week: int = Field(..., example=40, alias="hours-per-week")
     native_country: str = Field(..., example="United-States", alias="native-country")
 
-path = None # TODO: enter the path for the saved encoder 
+path = encoder_path # TODO: enter the path for the saved encoder DONE?
 encoder = load_model(path)
 
-path = None # TODO: enter the path for the saved model 
+path = model_path # TODO: enter the path for the saved model DONE?
 model = load_model(path)
 
 # TODO: create a RESTful API using FastAPI
-app = None # your code here
+app = FastAPI() # your code here Done?
 
 # TODO: create a GET on the root giving a welcome message
 @app.get("/")
 async def get_root():
     """ Say hello!"""
     # your code here
+    return {"greeting": "Say hello!"}
     pass
 
 
