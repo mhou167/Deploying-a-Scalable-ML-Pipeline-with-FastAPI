@@ -22,10 +22,10 @@ The data used is publicly available.  The dataset is from the Census Bureau.  It
 
 ## Metrics
 The metrics used in this model are precision, recall and fbeta score.
-Peformance on precision: TODO
-performance on recall: TODO
-performances on fbeta: TODO
-_Please include the metrics used and your model's performance on those metrics._Then delete this line.
+Peformance on precision: Very Accurate.  80% of the values have a precision value over 60% meaning this model rarely produces false positives.
+performance on recall: Adequate.  37% of the values are 60% or higher, most of which are perfect 100%.  The model does an adequate job of capturing most of the relevant positive cases.
+performances on fbeta: Good.  The overall fbeta value is .70 which is good and indicates better performance and a stronger emphasis on recall.
+
 
 ## Ethical Considerations
 The data used is publicly available through the Census Bureau and does not include any sensitive data for ethical considerations.
