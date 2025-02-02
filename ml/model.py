@@ -139,15 +139,15 @@ def performance_on_categorical_slice(
         # your code here
         # for input data, use data in column given as "column_name", with the slice_value 
         # use training = False
-        data= "pd.census.csv",
-        column_name= "salary",
-        slice_value= "str",
-        categorical_features= cat_features,
+        #data= data,
+        #column_name= "salary",
+        #slice_value= "str",
+        data[data[column_name] == slice_value],
+        categorical_features= categorical_features,
         label= "salary",
         encoder= encoder,
         lb= lb,
-        model= model,
     )
-    preds = None # your code here to get prediction on X_slice using the inference function
+    preds = inference(model, X_slice) # your code here to get prediction on X_slice using the inference function DONE
     precision, recall, fbeta = compute_model_metrics(y_slice, preds)
     return precision, recall, fbeta
