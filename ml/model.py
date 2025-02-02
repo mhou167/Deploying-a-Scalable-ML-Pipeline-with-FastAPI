@@ -144,6 +144,7 @@ def performance_on_categorical_slice(
         #slice_value= "str",
         data[data[column_name] == slice_value],
         categorical_features= categorical_features,
+        training=False,
         label= "salary",
         encoder= encoder,
         lb= lb,
